@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "PMG Sub-Extractor",
+  "version": "1.2",
+  "description": "Extrai sub-domínios do PMG com rolagem automática do GRID da Quarentena.",
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/"],
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": ["<all_urls>"]
+}
