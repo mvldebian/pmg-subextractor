@@ -1,50 +1,142 @@
-# pmg-subextractor
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMG Subdomain Extractor - Documentação</title>
+    <style>
+        :root {
+            --primary: #2196F3;
+            --secondary: #4CAF50;
+            --dark: #333;
+            --light: #f4f4f9;
+            --white: #ffffff;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        header {
+            text-align: center;
+            border-bottom: 2px solid var(--light);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 { color: var(--primary); margin: 0; }
+        h2 { color: var(--primary); border-left: 5px solid var(--primary); padding-left: 15px; margin-top: 30px; }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .feature-item {
+            background: var(--light);
+            padding: 15px;
+            border-radius: 8px;
+            border-top: 3px solid var(--secondary);
+        }
+        .feature-item strong { color: var(--dark); display: block; margin-bottom: 5px; }
+        .steps {
+            background: #fff8e1;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #ffc107;
+        }
+        ol { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        code {
+            background: #eee;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #777;
+        }
+        .btn-download {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
 
-O PMG Subdomain Extractor é uma ferramenta de automação desenvolvida especificamente para administradores do Proxmox Mail Gateway (PMG)
-Sua função principal é extrair listas de subdomínios de forma rápida e precisa, eliminando o trabalho manual de copiar dados de grids extensos.
+<div class="container">
+    <header>
+        <h1>PMG Subdomain Extractor</h1>
+        <p>Extrator Inteligente de Subdomínios para Proxmox Mail Gateway</p>
+    </header>
 
-<img width="432" height="184" alt="image" src="https://github.com/user-attachments/assets/dc9e261d-7924-456f-8e14-0014ac17e3eb" />
-<br>
-<img width="321" height="364" alt="image" src="https://github.com/user-attachments/assets/77ccf9fc-9019-4ad0-b013-ce53502b88e9" />
-<br><br>
-<b>Como a Extensão Funciona</b>
+    <section>
+        <h2>O que é?</h2>
+        <p>Uma extensão para Google Chrome desenvolvida para automatizar a coleta de subdomínios (<code>@sub.exemplo.com.br</code>) diretamente da interface do Proxmox Mail Gateway. Ela resolve o desafio de copiar dados de grids que carregam conteúdo sob demanda (Lazy Loading).</p>
+    </section>
 
-Injeção de Interface (Overlay): Ao ser ativada, a extensão cria um painel de controle flutuante diretamente na página do Proxmox. Isso permite que você navegue ou visualize os dados enquanto a ferramenta trabalha, sem que o popup feche sozinho.
+    <section>
+        <h2>Funcionalidades Principais</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <strong>Rolagem Automática</strong>
+                Percorre todo o grid automaticamente para capturar itens que ainda não foram renderizados na tela.
+            </div>
+            <div class="feature-item">
+                <strong>Filtragem Rigorosa</strong>
+                Algoritmo que diferencia subdomínios de domínios principais, ignorando endereços como <code>@empresa.com.br</code>.
+            </div>
+            <div class="feature-item">
+                <strong>Interface Persistente</strong>
+                Painel flutuante (Overlay) que não fecha ao clicar fora, permitindo acompanhar o progresso em tempo real.
+            </div>
+            <div class="feature-item">
+                <strong>Exportação Rápida</strong>
+                Botões dedicados para copiar a lista limpa para o clipboard ou baixar como arquivo <code>.txt</code>.
+            </div>
+        </div>
+    </section>
 
-Rolagem Automática Inteligente: O Proxmox utiliza "Buffered Rendering" (carrega apenas o que aparece na tela). A extensão simula a rolagem do mouse automaticamente, percorrendo todo o grid do início ao fim para garantir que 100% dos itens sejam lidos.
+    <section>
+        <h2>Como Instalar</h2>
+        <div class="steps">
+            <ol>
+                <li><strong>Baixe o ZIP:</strong> Obtenha o arquivo da extensão e extraia-o em uma pasta no seu computador.</li>
+                <li><strong>Modo do Desenvolvedor:</strong> No Chrome, acesse <code>chrome://extensions/</code> e ative o "Modo do desenvolvedor" no canto superior direito.</li>
+                <li><strong>Carregar Extensão:</strong> Clique em "Carregar sem compactação" e selecione a pasta onde os arquivos foram extraídos.</li>
+                <li><strong>Fixar Extensão:</strong> Clique no ícone de quebra-cabeça do Chrome e fixe o ícone do PMG Extractor para fácil acesso.</li>
+            </ol>
+        </div>
+    </section>
 
-Filtragem Rigorosa de Subdomínios: Diferente de capturas simples, esta ferramenta utiliza uma lógica avançada para distinguir domínios principais de subdomínios.
-Captura: @sub.empresa.com.br, @vendas.dominio.com.
+    <section>
+        <h2>Como Usar</h2>
+        <p>Abra o painel do seu Proxmox Mail Gateway na tela de domínios. Clique no ícone da extensão e depois em <strong>"Abrir Extrator"</strong>. O painel flutuante aparecerá e a extração começará imediatamente conforme você aciona os comandos no painel.</p>
+    </section>
 
-Ignora: @empresa.com.br, @dominio.com (mesmo com extensões compostas).
+    <footer>
+        <p>Desenvolvido para otimização de fluxos de trabalho no Proxmox Mail Gateway.</p>
+    </footer>
+</div>
 
-Exportação de Dados: Após a conclusão, a extensão remove duplicatas, ordena a lista alfabeticamente e oferece botões para copiar tudo para a área de transferência ou baixar como um arquivo .txt.
-
-
-<b>Guia de Instalação (Passo a Passo)</b>
-
-Como esta é uma extensão personalizada (não está na Chrome Web Store), a instalação é feita via "Modo do Desenvolvedor":
-
-Extração dos Arquivos:
-
-Baixe o arquivo .zip da extensão e extraia-o em uma pasta permanente no seu computador (ex: Documentos/Extensao-PMG).
-
-Acesso às Extensões do Chrome:
-
-Abra o Google Chrome e digite chrome://extensions/ na barra de endereços.
-
-Ativação do Modo do Desenvolvedor:
-
-No canto superior direito da página, ative a chave "Modo do desenvolvedor".
-
-Carregamento da Extensão:
-
-Clique no botão "Carregar sem compactação" que apareceu no canto superior esquerdo.
-Selecione a pasta onde você extraiu os arquivos da extensão (a pasta que contém o arquivo manifest.json).
-
-Uso no Proxmox:
-
-Acesse seu painel do Proxmox Mail Gateway.
-Clique no ícone de quebra-cabeça (Extensões) no Chrome e fixe o PMG Extractor.
-Clique no botão da extensão e selecione "Abrir Extrator" para iniciar a coleta.
-
+</body>
+</html>
