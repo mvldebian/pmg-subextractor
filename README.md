@@ -7,7 +7,8 @@ Sua função principal é extrair listas de subdomínios de forma rápida e prec
 <br>
 <img width="321" height="364" alt="image" src="https://github.com/user-attachments/assets/77ccf9fc-9019-4ad0-b013-ce53502b88e9" />
 
-Como a Extensão Funciona
+
+<b>Como a Extensão Funciona</b>
 
 Injeção de Interface (Overlay): Ao ser ativada, a extensão cria um painel de controle flutuante diretamente na página do Proxmox. Isso permite que você navegue ou visualize os dados enquanto a ferramenta trabalha, sem que o popup feche sozinho.
 
@@ -21,7 +22,7 @@ Ignora: @empresa.com.br, @dominio.com (mesmo com extensões compostas).
 Exportação de Dados: Após a conclusão, a extensão remove duplicatas, ordena a lista alfabeticamente e oferece botões para copiar tudo para a área de transferência ou baixar como um arquivo .txt.
 
 
-Guia de Instalação (Passo a Passo)
+<b>Guia de Instalação (Passo a Passo)</b>
 
 Como esta é uma extensão personalizada (não está na Chrome Web Store), a instalação é feita via "Modo do Desenvolvedor":
 
