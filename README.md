@@ -4,9 +4,8 @@ O PMG Subdomain Extractor é uma ferramenta de automação desenvolvida especifi
 Sua função principal é extrair listas de subdomínios de forma rápida e precisa, eliminando o trabalho manual de copiar dados de grids extensos.
 
 <img width="432" height="184" alt="image" src="https://github.com/user-attachments/assets/dc9e261d-7924-456f-8e14-0014ac17e3eb" />
-
+<br>
 <img width="321" height="364" alt="image" src="https://github.com/user-attachments/assets/77ccf9fc-9019-4ad0-b013-ce53502b88e9" />
-
 
 Como a Extensão Funciona
 
